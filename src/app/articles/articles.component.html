@@ -1,0 +1,19 @@
+<button (click)="findAllArticles()">Find all</button>
+<table *ngIf="allArticles != null && allArticles.length > 0">
+  <thead>
+  <th>code</th>
+  <th>designation</th>
+  <th>Unit price</th>
+  <th>TVA</th>
+  <th>Photo</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let article of allArticles">
+    <td>{{article.CodeArticle}}</td>
+    <td>{{article.designation}}</td>
+    <td>{{article.prixUnitaireTTC}}</td>
+    <td>{{article.tautTva}}</td>
+    <td>{{article.photo}}</td>
+  </tr>
+  </tbody>
+</table>
