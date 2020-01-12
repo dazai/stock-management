@@ -14,26 +14,27 @@ export class CommandeClientService {
     // {'Authorization' : 'Bearer tojkjshdfkjhsdmf'}
     );
 
-  constructor(private http : HttpClient) { }
 
-  public addCommandeClient(commande : CommandeClient) {
-    this.http.post(this.API_URL + '/save', commande, {headers: this.options});
+  constructor(private http:HttpClient) { }
+
+  public findCommandeClientById(id:number) : Observable<CommandeClient> {
+    return this.http.get<CommandeClient>(`${this.API_URL}/getOne/${id}`);
   }
 
-  public updateCommande(commande : CommandeClient) {
-    this.http.put(this.API_URL + '/update', commande, {headers: this.options});
-  }
-
-  //public deleteClient(client : Client) {
-    //this.http.delete(this.API_URL + '/save', client);
-  //}
-
-  public getAll(): Observable<Array<CommandeClient>> {
+  public findAllCommandeClient(): Observable<Array<CommandeClient>> {
     return this.http.get<Array<CommandeClient>>(this.API_URL + '/getAll');
   }
 
-  public getOne(id:number) : Observable<CommandeClient> {
-    return this.http.get<CommandeClient>(`${this.API_URL}/getOne/${id}`);
+  public addCommandeClient(commandeClient: CommandeClient) {
+    this.http.post(this.API_URL + '/save', commandeClient, {headers: this.options});
+  }
+
+  public updateCommandeClient(commandeClient : CommandeClient) {
+    this.http.put(this.API_URL + '/update', commandeClient, {headers: this.options});
+  } 
+
+  public deleteCommandeClient(commandeClient:CommandeClient) {
+    this.http.request('delete', this.API_URL+'/delete', { headers: this.options ,body: commandeClient })
   }
 
 }

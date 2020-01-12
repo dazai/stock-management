@@ -20,7 +20,7 @@ export class CategoryService {
     this.http.post(this.API_URL + '/save', category, {headers: this.options});
   }
 
-  public updateClient(category : Category) {
+  public updateCategory(category : Category) {
     this.http.put(this.API_URL + '/update', category, {headers: this.options});
   }
 

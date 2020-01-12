@@ -17,15 +17,24 @@ export class ArticleService {
 
   constructor(private http:HttpClient) { }
 
-  public findAllArticles(): Observable<Array<Article>> {
+  public findArticleById(id:number) : Observable<Article> {
+    return this.http.get<Article>(`${this.API_URL}/getOne/${id}`);
+  }
+
+  public findAllArticle(): Observable<Array<Article>> {
     return this.http.get<Array<Article>>(this.API_URL + '/getAll');
   }
 
   public addArticle(article: Article) {
-    this.http.post(this.API_URL + '/addArticle', article, {headers: this.options});
+    this.http.post(this.API_URL + '/save', article, {headers: this.options});
   }
 
-  public findArticleById(id:number) : Observable<Article> {
-    return this.http.get<Article>(`${this.API_URL}/getOne/${id}`);
+  public updateArticle(article : Article) {
+    this.http.put(this.API_URL + '/update', article, {headers: this.options});
+  } 
+
+  public deleteArticle(article:Article) {
+    this.http.request('delete', this.API_URL+'/delete', { headers: this.options ,body: article })
   }
 }
+
