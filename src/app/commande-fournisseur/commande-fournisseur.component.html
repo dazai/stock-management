@@ -1,0 +1,16 @@
+<p>commande-fournisseur works!</p>
+<button (click)="findAllCommandeFournisseur()">Find all commande fournisseur</button>
+<table *ngIf="allCommandeFournisseur != null && allCommandeFournisseur.length > 0">
+    <thead>
+        <th>idCommandeFournisseur</th>
+        <th>code</th>
+        <th>date</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cmd of allCommandeFournisseur">
+            <td>{{cmd.idCommandeFournisseur}}</td>
+            <td>{{cmd.code}}</td>
+            <td>{{cmd.date}}</td>
+        </tr>
+    </tbody>
+</table>

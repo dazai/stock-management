@@ -1,0 +1,16 @@
+<p>mvt-stock works!</p>
+<button (click)="findAll()">Find all mvt stock</button>
+<table *ngIf="allMvtStk != null && allMvtStk.length > 0">
+    <thead>
+        <th>idMvtStock</th>
+        <th>quantite</th>
+        <th>typeMvt</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mvt of allMvtStk">
+            <td>{{mvt.idMvtStock}}</td>
+            <td>{{mvt.quantite}}</td>
+            <td>{{mvt.typeMvt}}</td>
+        </tr>
+    </tbody>
+</table>

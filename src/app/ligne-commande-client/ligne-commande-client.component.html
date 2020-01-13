@@ -1,0 +1,16 @@
+<p>ligne-commande-client works!</p>
+<button (click)="findAll()">Find all ligne cmd client</button>
+<table *ngIf="allLigneCommandeClient != null && allLigneCommandeClient.length > 0">
+    <thead>
+        <th>idLigneCommandeClient</th>
+        <th>idLigneCommandeClient</th>
+        <th>idLigneCommandeClient</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ligne of allLigneCommandeClient">
+            <td>{{ligne.idLigneCommandeClient}}</td>
+            <td>{{ligne.idLigneCommandeClient}}</td>
+            <td>{{ligne.idLigneCommandeClient}}</td>
+        </tr>
+    </tbody>
+</table>

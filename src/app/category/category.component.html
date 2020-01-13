@@ -1,0 +1,16 @@
+<p>category works!</p>
+<button (click)="findAllCategories()">Find all categories</button>
+<table *ngIf="allCategories != null && allCategories.length > 0">
+    <thead>
+        <th>id</th>
+        <th>code</th>
+        <th>designation</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of allCategories">
+            <td>{{category.iDCategory}}</td>
+            <td>{{category.code}}</td>
+            <td>{{category.designation}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,16 @@
+<p>ligne-commande-fournisseur works!</p>
+<button (click)="findAll()">Find all ligne commande fournisseur</button>
+<table *ngIf="allLigne != null && allLigne.length > 0">
+    <thead>
+        <th>idLigneCommandeFournisseur</th>
+        <th>idLigneCommandeFournisseur</th>
+        <th>idLigneCommandeFournisseur</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ligne of allLigne">
+            <td>{{ligne.idLigneCommandeFournisseur}}</td>
+            <td>{{ligne.idLigneCommandeFournisseur}}</td>
+            <td>{{ligne.idLigneCommandeFournisseur}}</td>
+        </tr>
+    </tbody>
+</table>

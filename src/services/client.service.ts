@@ -36,12 +36,12 @@ export class ClientService {
     return this.http.get<Client>(`${this.API_URL}/getOne/${id}`);
   }
 
-  public getClientByMail(mail : string) {
-    this.http.get(`${this.API_URL}/getClientByMail/${mail}`, {headers: this.options});
+  public getClientByMail(mail : string) : Observable<Client> {
+    return this.http.get<Client>(`${this.API_URL}/getClientByMail/${mail}`, {headers: this.options});
   }
 
-  public getClientByCriteria(criteria : string) {
-    this.http.get(`${this.API_URL}/getClientByFilterCriteria/namePattern'/${criteria}`, {headers: this.options});
+  public getClientByCriteria(criteria : string) : Observable<Client> {
+    return this.http.get<Client>(`${this.API_URL}/getClientByFilterCriteria/namePattern'/${criteria}`, {headers: this.options});
   }
 
 }

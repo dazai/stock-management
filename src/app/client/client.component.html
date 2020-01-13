@@ -1,0 +1,16 @@
+<p>client works!</p>
+<button (click)="findClients()">Find all clients</button>
+<table *ngIf="allClients != null && allClients.length > 0">
+    <thead>
+        <th>idClient</th>
+        <th>nom</th>
+        <th>prenom</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of allClients">
+            <td>{{client.idClient}}</td>
+            <td>{{client.nom}}</td>
+            <td>{{client.prenom}}</td>
+        </tr>
+    </tbody>
+</table>

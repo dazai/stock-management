@@ -1,0 +1,16 @@
+<p>ligne-vente works!</p>
+<button (click)="findAll()">Find all ligne vente</button>
+<table *ngIf="allLigneVente != null && allLigneVente.length > 0">
+    <thead>
+        <th>idLigneVente</th>
+        <th>idLigneVente</th>
+        <th>idLigneVente</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ligne of allLigneVente">
+            <td>{{ligne.idLigneVente}}</td>
+            <td>{{ligne.idLigneVente}}</td>
+            <td>{{ligne.idLigneVente}}</td>
+        </tr>
+    </tbody>
+</table>

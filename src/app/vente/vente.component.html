@@ -1,0 +1,16 @@
+<p>vente works!</p>
+<button (click)="findAll()">Find all mvt stock</button>
+<table *ngIf="allVente != null && allVente.length > 0">
+    <thead>
+        <th>idVente</th>
+        <th>code</th>
+        <th>dateVente</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vente of allVente">
+            <td>{{vente.idVente}}</td>
+            <td>{{vente.code}}</td>
+            <td>{{vente.dateVente}}</td>
+        </tr>
+    </tbody>
+</table>

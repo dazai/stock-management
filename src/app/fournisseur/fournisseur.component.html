@@ -1,0 +1,16 @@
+<p>fournisseur works!</p>
+<button (click)="findAllFournisseur()">Find all fournisseur</button>
+<table *ngIf="allFournisseur != null && allFournisseur.length > 0">
+    <thead>
+        <th>idFournisseur</th>
+        <th>nom</th>
+        <th>prenom</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fournisseur of allFournisseur">
+            <td>{{fournisseur.idFournisseur}}</td>
+            <td>{{fournisseur.nom}}</td>
+            <td>{{fournisseur.prenom}}</td>
+        </tr>
+    </tbody>
+</table>

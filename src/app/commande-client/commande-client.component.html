@@ -1,0 +1,16 @@
+<p>commande-client works!</p>
+<button (click)="findAllCommandeClient()">Find all commandes clients</button>
+<table *ngIf="allCommandeClient != null && allCommandeClient.length > 0">
+    <thead>
+        <th>idCommandeClient</th>
+        <th>code</th>
+        <th>date</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cmd of allCommandeClient">
+            <td>{{cmd.idCommandeClient}}</td>
+            <td>{{cmd.code}}</td>
+            <td>{{cmd.date}}</td>
+        </tr>
+    </tbody>
+</table>
